@@ -2,6 +2,7 @@
 
 This is an example of how to add a file upload editor to the order edit screen in Vendr. All the code required exists in the repo but you'll need to copy it over to your solution manually (I haven't had chance to turn it into a package yet).
 
+- It works in Umbraco 10
 - It works with multiple files
 - It supports deletions
 - It returns simple meta data about the files with the following model:
