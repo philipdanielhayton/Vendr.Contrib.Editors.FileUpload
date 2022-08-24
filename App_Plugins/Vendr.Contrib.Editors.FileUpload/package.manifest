@@ -1,0 +1,6 @@
+﻿﻿{
+  "javascript": [
+    "~/App_Plugins/Vendr.Contrib.Editors.FileUpload/controllers/file-upload.controller.js"
+  ],
+  "css": []
+}

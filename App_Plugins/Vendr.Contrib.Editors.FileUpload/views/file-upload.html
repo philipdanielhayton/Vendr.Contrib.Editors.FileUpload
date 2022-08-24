@@ -1,0 +1,39 @@
+﻿<div ng-controller="Vendr.Contrib.Editors.FileUploadController as vm">
+  <input
+    id="filepicker"
+    type="file"
+    accept="{{ vm.filetypes }}"
+    ngf-select
+    ngf-model="filesHolder"
+    ngf-change="vm.handleFiles($files, $event)"
+    ngf-multipart="true"
+    ngf-multiple="true"
+    style="display: none"
+  />
+
+  <label for="filepicker" class="btn btn-default"> {{ vm.buttonText }} </label>
+
+  <umb-button
+    action="vm.upload(vm.files)"
+    type="button"
+    label="Upload"
+    button-style="success"
+    state="vm.buttonState"
+    ng-if="vm.files.length"
+    disabled="vm.buttonState == 'busy'"
+  >
+  </umb-button>
+
+  <ul ng-if="vm.value.length" style="list-style: none; margin: 1rem 0 0 0; display: flex;">
+      <li ng-repeat="file in vm.value" style="margin-right: 0.5rem; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; border-radius: 4px; display: flex; align-items: center;">
+          <a href="{{ file.url }}" target="_blank" >
+              {{ file.name }}
+          </a>
+          <button type="button" ng-click="vm.deleteFile(file)" style="margin-left: 1rem; border: none; background: none; padding: 0;">
+              <umb-icon icon="icon-trash"
+                        class="small">
+              </umb-icon>
+          </button>
+      </li>
+  </ul>
+</div>
