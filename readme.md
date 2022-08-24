@@ -4,7 +4,7 @@ This is an example of how to add a file upload editor to the order edit screen i
 
 - It works with multiple files
 - It supports deletions
-- It saves a simple json array to the properties model.value with the following model:
+- It returns simple meta data about the files with the following model:
 
 ```
 [
@@ -15,7 +15,7 @@ This is an example of how to add a file upload editor to the order edit screen i
 ]
 ```
 
-- Files are saved to the server on submit, but the json data is saved when the order is saved.
+- Files are immediately persisted to the server, but meta data is not saved until the order is saved.
 - It's very much a rough draft, use it to get started and then polish as needed
 
 ## Installation
@@ -42,7 +42,7 @@ This is an example of how to add a file upload editor to the order edit screen i
 
 ##### Where are files saved to?
 
-Out of the box files will be saved in your Umbraco website at `/{rootFolder}/{storeId}/{orderId}/{alias}`, where `rootFolder` is the value set in app settings.
+Out of the box files will be saved in your Umbraco website at `/{rootFolder}/{storeId}/{orderId}/{alias}/{fileName}`, where `rootFolder` is the value set in app settings.
 
 ##### Order state is not updated when files are uploaded
 
